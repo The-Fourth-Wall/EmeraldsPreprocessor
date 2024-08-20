@@ -20,6 +20,7 @@
 #ifndef __EMERALDS_PREPROCESSOR_H_
 #define __EMERALDS_PREPROCESSOR_H_
 
+#include "preprocessor_inline/preprocessor_inline.h"
 #include "preprocessor_number_of_elements/preprocessor_number_of_elements.h"
 #include "preprocessor_version/preprocessor_version.h"
 
