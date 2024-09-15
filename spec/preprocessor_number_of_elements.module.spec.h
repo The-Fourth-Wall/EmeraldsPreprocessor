@@ -1,5 +1,5 @@
-#include "../../libs/cSpec/export/cSpec.h"
-#include "../../src/preprocessor_number_of_elements/preprocessor_number_of_elements.h"
+#include "../libs/cSpec/export/cSpec.h"
+#include "../src/EmeraldsPreprocessor.h"
 
 module(T_preprocessor_number_of_elements, {
   describe("#PREPROCESSOR_NUMBER_OF_ELEMENTS", {

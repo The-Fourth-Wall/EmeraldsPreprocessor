@@ -1,5 +1,5 @@
-#include "../../libs/cSpec/export/cSpec.h"
-#include "../../src/preprocessor_version/preprocessor_version.h"
+#include "../libs/cSpec/export/cSpec.h"
+#include "../src/EmeraldsPreprocessor.h"
 
 module(T_preprocessor_version, {
   it("returns the current version", {
