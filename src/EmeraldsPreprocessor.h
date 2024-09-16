@@ -20,6 +20,11 @@
 #ifndef __EMERALDS_PREPROCESSOR_H_
 #define __EMERALDS_PREPROCESSOR_H_
 
+#if defined(__GNUC__) || defined(__clang__) || defined(__IBMC__) || \
+  defined(__IBMCPP__) || defined(__COMPCERT__)
+  #define PREPROCESSOR_GNU
+#endif
+
 #if defined(_MSC_VER)
   #define PREPROCESSOR_C_VERSION 1989
 #elif defined(__STDC_VERSION__)
@@ -81,11 +86,15 @@
 #endif
 
 #if PREPROCESSOR_C_VERSION >= 1999
-  #define p_inline inline
-#elif defined(__GNUC__)
-  #define p_inline __inline__
+  #if defined(PREPROCESSOR_GNU)
+    #define p_inline static inline __attribute__((always_inline))
+  #elif defined(_MSC_VER)
+    #define p_inline static inline __forceinline
+  #elif defined(_MSC_VER)
+    #define p_inline static inline
+  #endif
 #else
-  #define pp_inline
+  #define p_inline static
 #endif
 
 #if PREPROCESSOR_C_VERSION >= 1999
