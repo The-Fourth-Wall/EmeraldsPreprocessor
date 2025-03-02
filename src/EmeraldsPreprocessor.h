@@ -98,7 +98,7 @@
     #define p_inline static inline __attribute__((always_inline))
   #elif defined(_MSC_VER)
     #define p_inline static inline __forceinline
-  #elif defined(_MSC_VER)
+  #else
     #define p_inline static inline
   #endif
 #else
